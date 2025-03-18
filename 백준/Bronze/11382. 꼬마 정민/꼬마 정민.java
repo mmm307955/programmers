@@ -7,7 +7,6 @@ public class Main{
         long B = sc.nextLong();
         long C = sc.nextLong();
 
-        long sum = A+B+C;
-        System.out.println(sum);
+        System.out.println(A+B+C);
     }
 }
