@@ -1,21 +1,31 @@
-import java.util.Scanner;
-
+import java.util.*;
+import java.io.*;
 public class Main {
-    public static void main(String[] args)  {
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        int[] arr = new int[N];
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        int N = Integer.parseInt(br.readLine());
+        int arr[] = new int[N];//N개 입력받을 배열 선언
+
+        StringTokenizer st;
+        st = new StringTokenizer(br.readLine(), " ");
 
         for(int i = 0; i < arr.length; i++){
-            arr[i] = sc.nextInt();
+            arr[i] = Integer.parseInt(st.nextToken());
         }
-        int num = sc.nextInt();
+        int num = Integer.parseInt(br.readLine());
+
         int count = 0;
         for(int i = 0; i < arr.length; i++){
-            if(arr[i] == num){
-                count++;
-            }
+            if(arr[i] == num) count++;
         }
-        System.out.println(count);
+
+        br.close();
+        bw.write(count+"");
+        bw.flush();
+        bw.close();
+
+
     }
 }
