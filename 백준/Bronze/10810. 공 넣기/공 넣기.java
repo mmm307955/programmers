@@ -1,24 +1,31 @@
+import java.io.*;
 import java.util.*;
 
 public class Main{
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        int N = sc.nextInt();//바구니 개수
+        String[] firstLine = br.readLine().split(" ");
+        int N = Integer.parseInt(firstLine[0]);//바구니 개수
         int[] basket = new int[N];
-        int M = sc.nextInt();
-        //i는 M번의 공넣기를 할 것을 의미
+        int M = Integer.parseInt(firstLine[1]);;
+
         for(int i = 0; i < M; i++){
-            int sB = sc.nextInt();//넣기 시작할 바구니
-            int eB = sc.nextInt();//넣기 끝나는 바구니
-            int num = sc.nextInt();//넣을 공 숫자
+            String[] input = br.readLine().split(" ");
+            int sB = Integer.parseInt(input[0]);
+            int eB = Integer.parseInt(input[1]);
+            int num = Integer.parseInt(input[2]);
             for(int j = sB-1; j < eB; j++){//num 즉 그 공 숫자 대입
                 basket[j] = num;
             }
         }
         for(int i = 0; i < basket.length; i++){
-            System.out.print(basket[i] + " ");
+            bw.write(basket[i] + " ");
         }
+        bw.flush();
+        bw.close();
+        br.close();
 
     }
 }
