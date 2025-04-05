@@ -11,7 +11,7 @@ public class Main{
               arr[i][j] = Integer.parseInt(st.nextToken());  
             }
         }
-        int max = -1;
+        int max = Integer.MIN_VALUE;
         int row = -1;
         int col = -1;
         for(int i = 1; i <= 9; i++){
