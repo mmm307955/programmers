@@ -11,13 +11,13 @@ public class Main{
         long[] mod = new long[M];
         long answer = 0;
         st = new StringTokenizer(br.readLine());
-        sum[0] = Long.parseLong(st.nextToken());
+        sum[0] = Long.parseLong(st.nextToken())%M;
         for(int i = 1; i < N; i++){
             sum[i] = (sum[i-1] + Long.parseLong(st.nextToken()))%M;
         }
         for(int i = 0; i < N; i++){
             int result = (int)sum[i] % M;
-            if(result == 0) answer++;
+            if(sum[i] == 0) answer++;
             mod[result]++;
         }
         for(int i = 0; i < M; i++){
