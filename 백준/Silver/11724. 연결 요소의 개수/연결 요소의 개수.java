@@ -40,8 +40,9 @@ public class Main{
             return;
         }
         visited[v] = true;
+        
         for(int i : A[v]){
-            if(visited[v]){
+            if(!visited[i]){
                 DFS(i);
             }
         }
